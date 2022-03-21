@@ -3,6 +3,7 @@
 if(isset($_POST['update'])){
     $ob = new Create($_POST['etageup'], $_POST['positionup'], $_POST['priceup']);
     $ob->insertAmpoule();
+    $ob->insertHisto();
 }
 
 class Create {
@@ -35,11 +36,25 @@ class Create {
 
         $sth->bindValue(":id", $_GET['update']);
 
-        $sth->execute(header("Location: http://localhost/Ampoule/Projet-Ampoules/dashboard.php"));
+        $sth->execute(header("Location: ../dashboard.php"));
         var_dump($sth);
     }
 
+    
+    public function histoAmpoule(){
+        include_once('connexion.php');
+        $database = new Database();
+        $db = $database->getConnection();
 
+        $sql = "INSERT INTO historique (`etage`, `position`, `price`) 
+        VALUES (:etage ,:position , :price)";
+        $sth = $db->prepare($sql);
+        $sth->bindValue(':etage', $this->etage);
+        $sth->bindValue(':position', $this->position);
+        $sth->bindValue(':price', $this->price);
+    
+        $sth->execute(header("Location: http://localhost/Ampoule/Projet-Ampoules/dashboard.php"));
+    }
 
 
 

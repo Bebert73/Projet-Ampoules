@@ -11,10 +11,11 @@ label{
 }
 
 table{
-    margin: 0 auto;  
-    padding: 0 auto;    
+    margin-left:250px;
+    padding: 15px;    
     border-collapse: collapse;
     color: rgb(255, 255, 255);
+
 
   }
   
@@ -32,26 +33,32 @@ table{
     width: 250px;
     height: 40px;
     background-color: #2089d4;
+    text-align: center;
+    cursor:pointer;
   }
 
   ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+
     height: 120px;
     overflow: hidden;
     background-color: #005d9f;
   }
 
   .logo{
-    position: absolute;
+    display: flex;
+    justify-content: center;
     height: 150px;
     width: 150px;
-    background-color: transparent;
+    background-color: #005d9f;
+
+    
   }
 
   .objet-center{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    background-color: #005d9f;
   }
 
   body{
@@ -63,6 +70,7 @@ table{
   .send{
     cursor: pointer;
     border-radius: 150px;
+    margin: 10px;
     width: 150px;
     height: 50px;
     border: transparent;
@@ -74,11 +82,80 @@ table{
   .send:hover{
     transform: scale(110%);
   }
-  .fond-form{
-    padding: 60px;
-  }
 
   .centform{
     background-color: red;
   }
 
+.input-margin{
+  margin: 15px;
+}
+.visuel{
+  padding: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
+.creation{
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  
+  
+}
+
+form{
+  display: flex;
+  flex-direction: row;
+  
+  
+}
+
+.navbar{
+  background-color:#005d9f;
+  text-decoration: none;
+  color:white;
+  font-size: 40px;
+  display: flex;
+text-align: justify;
+}
+
+.visuel-histo{
+ display: flex;
+  justify-content: center;
+}
+
+.form-histo{
+  display: flex;
+text-align: center;
+}
+
+.login{
+  cursor: pointer;
+  border-radius: 150px;
+  margin: 10px;
+  width: 150px;
+  height: 50px;
+  border: transparent;
+  background-color: #329f00;
+  color: white;
+  transition: transform 250ms;
+}
+
+.logins{
+  cursor: pointer;
+  border-radius: 150px;
+  margin: 10px;
+  width: 150px;
+  height: 50px;
+  border: transparent;
+  background-color: #ff9d00;
+  color: white;
+  transition: transform 250ms;
+}
+
+.login:hover .logins:hover{
+  transform: scale(110%);
+}

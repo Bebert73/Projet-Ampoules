@@ -19,34 +19,43 @@ include_once('./php/show.php');
 </head>
 <body>
 <div class="objet-center">
-<a  href="dashboard.php" ><img class="logo" src="./pic/logo.png" alt=""></a>
 <ul>
+    <a class="navbar" href="dashboard.php">Ampoule</a>
+    
 </ul>
 
+<a  href="dashboard.php" ><img class="logo" src="./pic/logo.png" alt=""></a>
 
+<a class="navbar" href="historique.php">Historique</a>
+</div>
+<button class="login"  type="submit" name="login" >Login</button>
+<button class="logins"  type="submit" name="login" >Register</button>
+<section class="visuel">
+   
 <!-- Formulaire Création -->
-<div class="fond-form">
 <form action="./php/Create.php" method="post">
     <div class="creation">
-    <div>
-        <label for="">Etages</label>
+        <div class="label-margin">
+    <label for="">Etages</label>
+    </div>
+    <div class="input-margin">
         <input type="number" name="etage" min="0">
     </div>
-    <div>
-        <label for="">Position</label>
+    <div class="label-margin">
+    <label for="">Position</label>
+    </div>
+    <div class="input-margin">
         <input type="text" name="position">
     </div>
-    <div>
-        <label for="">prix</label>
+    <div class="label-margin">
+    <label for="">prix</label>
+    </div>
+    <div class="input-margin">
         <input type="number" name="price" min="0">
     </div>
-    <div>
         <button class="send" type="submit" name="Submit" >Créer</button>
-    </div>
-    </div>
-    </form>
-    </div>
-    </div>
+        </div>
+        </form>
     
     <table>
   <tr>
@@ -66,9 +75,9 @@ include_once('./php/show.php');
 
 	?>
 
-<div class="fond-form">
+
   <tr>
-  <form action="./php/Update.php?update=<?php echo $rows['id'] ?>" method="post">
+  <form action="./php/Update.php?update=<?php echo $rows['id'] ?>" method="post" >
     <td><?php echo $rows['id']?></td>
     <td><?php echo $rows['date']?></td>
     <td><input name="etageup" type="number" value="<?php echo $rows['etage']?>"></td>
@@ -76,12 +85,14 @@ include_once('./php/show.php');
     <td><input name="priceup" type="number" value="<?php echo $rows['price']?>"></td>
     <td><button class="send"  type="submit" name="update" >Update</button></td>
         </form>
-
-        <form action="./php/Delete.php?id=<?php echo $rows['id'] ?>" method="post">
-    <td><button class="send"  type="submit" name="delete" >Delete</button></td>
+        <form action="./php/Delete.php?delete=<?php echo $rows['id'] ?>" method="post">
+        <td><button OnClick="return confirm('t sah frere tu veux supprimer gros Shlag va ?');" class="send"  type="submit" name="deleteA" >Delete</button></td>
         </form>
+
+
+        
 </tr>
-</div>
+
 
 
 
@@ -89,5 +100,10 @@ include_once('./php/show.php');
  			 }
 	?> 
     </table>
+ 
+    </form>
+   
+   
+    </section>
 </body>
 </html>

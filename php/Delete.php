@@ -2,10 +2,13 @@
 
 if(isset($_POST['delete'])){
     $dl = new Delete($_GET['id']);
+    $dl->deletehisto();
+}
+
+if(isset($_POST['deleteA'])){
+    $dl = new Delete($_GET['delete']);
     $dl->deleteapoule();
 }
-echo'hey';
-
 class Delete{
 
 
@@ -17,14 +20,24 @@ class Delete{
     }
 
 
-    public function deleteapoule(){
+    public function deletehisto(){
         require_once('connexion.php');
 
-        $sql = "DELETE FROM apoules WHERE id = :id LIMIT 1";
+        $sql = "DELETE FROM historique WHERE id = :id LIMIT 1";
         $dt = $db->prepare($sql);
         $dt->bindValue(":id", $this->id);
         var_dump($this->id);
-        $dt->execute(header("Location: http://localhost/Ampoule/Projet-Ampoules/dashboard.php"));
+        $dt->execute(header("Location: ../historique.php"));
         }
+
+        public function deleteapoule(){
+            require_once('connexion.php');
+    
+            $sql = "DELETE FROM apoules WHERE id = :id LIMIT 1";
+            $dt = $db->prepare($sql);
+            $dt->bindValue(":id", $this->id);
+            var_dump($this->id);
+            $dt->execute(header("Location: ../dashboard.php"));
+            }
 
 }

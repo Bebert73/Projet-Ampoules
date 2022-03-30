@@ -3,7 +3,7 @@
 if(isset($_POST['update'])){
     $ob = new Create($_POST['etageup'], $_POST['positionup'], $_POST['priceup']);
     $ob->insertAmpoule();
-    $ob->insertHisto();
+    $ob->histoAmpoule();
 }
 
 class Create {

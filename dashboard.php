@@ -28,10 +28,12 @@ include_once('./php/show.php');
 
 <a class="navbar" href="historique.php">Historique</a>
 </div>
-<button class="login"  type="submit" name="login" >Login</button>
-<button class="logins"  type="submit" name="login" >Register</button>
+<a href="login.php"><button  class="login"  type="submit" name="login" >Login</button></a>
+<a href="register.php"><button class="logins"  type="submit" name="login" >Register</button></a>
 <section class="visuel">
-   
+
+</div>
+    </div>
 <!-- Formulaire Création -->
 <form action="./php/Create.php" method="post">
     <div class="creation">

@@ -29,20 +29,28 @@ include_once('./php/show.php');
 <form action="./php/register.php" method="post">
     <div class="creation">
     <div>
-        <label for="">Username</label>
-        <input type="text" name="username" min="0">
+        <label for="">Nom</label>
+        <input type="text" name="nom" required>
+    </div>
+    <div>
+        <label for="">prénom</label>
+        <input type="text" name="prenom" required>
+    </div>
+    <div>
+        <label for="">pseudo</label>
+        <input type="text" name="pseudo" required>
     </div>
     <div>
         <label for="">email</label>
-        <input type="email" name="email">
+        <input type="email" name="email"required>
     </div>
     <div>
         <label for="">password</label>
-        <input type="password" name="password">
+        <input type="password" name="password"required>
     </div>
 
     <div>
-        <button class="send" type="submit" name="create" >Créer</button>
+        <button class="send" type="submit" name="register" >Créer</button>
     </div>
     </div>
     </form>

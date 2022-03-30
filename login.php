@@ -2,7 +2,7 @@
 include_once('./php/connexion.php');
 include_once('./php/Create.php');
 include_once('./php/show.php');
-
+session_start();
 ?>
 
 
@@ -30,19 +30,28 @@ include_once('./php/show.php');
     <div class="creation">
     <div>
         <label for="">Username</label>
-        <input type="text" name="username" min="0">
+        <input type="text" name="user" min="0" required>
     </div>
     <div>
         <label for="">password</label>
-        <input type="password" name="password">
+        <input type="password" name="pass" required>
     </div>
 
     <div>
-        <button class="send" type="submit" name="create" >Créer</button>
+        <button class="send" type="submit" name="login" >login</button>
     </div>
     </div>
     </form>
-
+    <?php
+                    if(isset($_SESSION["error"])){
+                        $error = $_SESSION["error"];
+                        echo "<span>$error</span>";
+                    }
+                ?>  
 
 </div>
     </div>
+
+    <?php
+    unset($_SESSION["error"]);
+?>
